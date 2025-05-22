@@ -135,7 +135,6 @@ in
     home-manager 
     neovim
     nnn
-    nixism
 
   ];
   # Some programs need SUID wrappers, can be configured further or are
