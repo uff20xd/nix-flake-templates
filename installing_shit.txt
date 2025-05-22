@@ -1,0 +1,13 @@
+cfdisk {disk}
+sudo mkfs.ext4 {disk/main}
+sudo mkfs.fat -F32 {disk/boot}
+sudo mkswap {disk/swap}
+sudo swapon
+
+sudo mkdir /mnt/nixos
+sudo mount {disk/main} /mnt/nixos
+sudo mkdir /mnt/nixos/boot
+sudo mount {disk/boot} /mnt/nixos/boot
+
+sudo nixos-generate-config --root /mnt/nixos
+sudo nixos-install --root /mnt/nixos
