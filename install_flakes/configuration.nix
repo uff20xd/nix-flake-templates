@@ -1,5 +1,13 @@
 {pkgs, modulesPath, ...}: 
 {
+
+  imports = [
+    ./hardware-configuration.nix
+  ];
+  boot.loader.grub.enable = true;
+  boot.loader.grup.efiSupport = true;
+  boot.loader.grub.device = "/dev/sda";
+
   console.keyMap = "de";
 
   users.defaultUserShell = pkgs.zsh;
